@@ -1,0 +1,29 @@
+name: GridLAB-D Results
+
+on:
+
+  push:
+    branches: [ main ]
+    
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: slacgismo/gridlabd:latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Simulation
+      run: |
+        gridlabd gridlabd.glm --redirect all 
+        tar cfz gridlabd.tar.gz .
+      
+    - name: Save results
+      uses: actions/upload-artifact@v2
+      with:
+        name: gridlabd
+        path: gridlabd.tar.gz
