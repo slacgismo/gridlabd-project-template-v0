@@ -23,3 +23,17 @@ Click on the `Actions` tab to inspect the result of the latest simulation.
 ## Step 5
 
 Download the results from the latest action's artifact `gridlabd-results`.
+
+# Advanced Usage
+
+## Model files
+
+For details on developing GridLAB-D model see https://docs.gridlabd.us.
+
+## Pre-processing
+
+You can create a pre-processing shell script named `gridlabd.pre`.
+
+## Post-processing
+
+You can create a post-processing shell script named `gridlabd.post`.
