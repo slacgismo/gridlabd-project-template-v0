@@ -22,4 +22,4 @@ Click on the `Actions` tab to inspect the result of the latest simulation.
 
 ## Step 5
 
-Download the results from the latest action's artifacts.
+Download the results from the latest action's artifact `gridlabd-results`.
