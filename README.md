@@ -54,6 +54,18 @@ curl -sL https://models.gridlabd.us/gridlabd-4/IEEE/13.glm -o 13.glm
 
 See https://github.com/slacgismo/gridlabd-models for details.
 
+## Pre-load and post-load options
+
+You can specify pre-load and post-load options by setting the `GLM_PRELOAD` and `GLM_POSTLOAD` options. Pre-load options are loaded before `gridlabd.glm` is loaded and post-load options are loaded after `gridlabd.glm`.
+
+## Specifying the weather
+
+You can load TMY3 weather using the `GLM_WEATHER` environment variable in the `gridlabd.pre` script. See https://github.com/slacgismo/gridlabd-weather for informaiton on available TMY3 weather files.
+
+## Specifying the clock
+
+You can specify the clock using the `GLM_TIMEZONE`, `GLM_STARTTIME`, and `GLM_STOPTIME` environment variables in the `gridlabd.pre` script.
+
 ## Using templates
 
-You can use a template by setting the `GRIDLABD_TEMPLATE` environment variable in the `gridlabd.pre` script.  See https://github.com/slacgismo/gridlabd-template for information on available templates.
+You can use a template by setting the `GLM_TEMPLATE` environment variable in the `gridlabd.pre` script.  See https://github.com/slacgismo/gridlabd-template for information on available templates.
