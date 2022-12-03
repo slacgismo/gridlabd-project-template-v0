@@ -18,8 +18,8 @@ Commit your new model to the `main` branch.
 
 ## Step 4
 
-Click on the [[actions]] tab to inspect the result of the simulation. 
+Click on the `Actions` tab to inspect the result of the latest simulation. 
 
 ## Step 5
 
-Download the results from the artifacts 
+Download the results from the latest action's artifacts.
