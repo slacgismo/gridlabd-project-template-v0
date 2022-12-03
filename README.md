@@ -41,3 +41,19 @@ You can create a post-processing shell script named `gridlabd.post`.
 ## Artifacts files
 
 All the files in the repository are stored in the artifact download except `gridlabd.tar.gz`, `LICENSE`, and `README.md`.
+
+# Pro-tips
+
+## Using standard models
+
+You can load a standard model by adding a `curl` command to the `gridlabd.pre` script. For example, to download the IEEE-13 model:
+
+~~~
+curl -sL https://models.gridlabd.us/gridlabd-4/IEEE/13.glm -o 13.glm
+~~~
+
+See https://github.com/slacgismo/gridlabd-models for details.
+
+## Using templates
+
+You can use a template by setting the `GRIDLABD_TEMPLATE` environment variable in the `gridlabd.pre` script.  See https://github.com/slacgismo/gridlabd-template for information on available templates.
