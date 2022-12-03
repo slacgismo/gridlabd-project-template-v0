@@ -20,9 +20,10 @@ jobs:
     - name: Simulation
       run: |
         [ -f gridlabd.pre ] && source gridlabd.pre
-        [ ! -z "$GRIDLABD_TEMPLATE" ] && gridlabd get $GRIDLABD_TEMPLATE
-        gridlabd --redirect all gridlabd.glm
-        [ -f gridlabd.post ] && source gridlabd.post ${GRIDLABD_TEMPLATE:+-t $GRIDLABD_TEMPLATE}
+        [ ! -z "$GLM_TEMPLATE" ] && gridlabd template get $GLM_TEMPLATE
+        [ ! -z "$GLM_WEATHER" ] && gridlabd weather get $GLM_WEATHER
+        gridlabd --redirect all ${GLM_PRELOAD} gridlabd.glm ${GLM_WEATHER} ${GLM_TIMEZONE:+-D timezone="$GLM_TIMEZONE"} ${GLM_STARTTIME:+-D starttime="$GLM_STARTTIME"} ${GLM_STOPTIME:+-D starttime="$GLM_STOPTIME"} ${GLM_POSTLOAD} ${GLM_TEMPLATE:+-t "$GLM_TEMPLATE"} 
+        [ -f gridlabd.post ] && source gridlabd.post 
         tar cfz gridlabd.tar.gz --exclude '{gridlabd.tar.gz,LICENSE,README.md}' $(find . -size 1 -print)
       
     - name: Save results
