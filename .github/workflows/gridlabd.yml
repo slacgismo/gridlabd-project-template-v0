@@ -20,8 +20,9 @@ jobs:
     - name: Simulation
       run: |
         [ -f gridlabd.pre ] && source gridlabd.pre
+        [ ! -z "$GRIDLABD_TEMPLATE" ] && gridlabd get $GRIDLABD_TEMPLATE
         gridlabd --redirect all gridlabd.glm
-        [ -f gridlabd.post ] && source gridlabd.post
+        [ -f gridlabd.post ] && source gridlabd.post ${GRIDLABD_TEMPLATE:+-t $GRIDLABD_TEMPLATE}
         tar cfz gridlabd.tar.gz --exclude '{gridlabd.tar.gz,LICENSE,README.md}' $(find . -size 1 -print)
       
     - name: Save results
