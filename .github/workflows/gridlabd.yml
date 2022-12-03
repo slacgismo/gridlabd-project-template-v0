@@ -22,7 +22,7 @@ jobs:
         [ -f gridlabd.pre ] && source gridlabd.pre
         gridlabd --redirect all gridlabd.glm
         [ -f gridlabd.post ] && source gridlabd.post
-        tar cfz gridlabd.tar.gz --exclude gridlabd.tar.gz LICENSE README.md *
+        tar cfz gridlabd.tar.gz --exclude gridlabd.tar.gz LICENSE README.md $(find . -size 1 -print)
       
     - name: Save results
       uses: actions/upload-artifact@v2
