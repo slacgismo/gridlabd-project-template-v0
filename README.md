@@ -24,7 +24,7 @@ Click on the `Actions` tab to inspect the result of the latest simulation.
 
 Download the results from the latest action's artifact `gridlabd-results`.
 
-# Advanced Usage
+# Advanced Topics
 
 ## Model files
 
@@ -37,3 +37,7 @@ You can create a pre-processing shell script named `gridlabd.pre`.
 ## Post-processing
 
 You can create a post-processing shell script named `gridlabd.post`.
+
+## Artifacts files
+
+All the files in the repository are stored in the artifact download except `gridlabd.tar.gz`, `LICENSE`, and `README.md`.
