@@ -71,3 +71,7 @@ You can specify the clock using the `GLM_TIMEZONE`, `GLM_STARTTIME`, and `GLM_ST
 ## Using templates
 
 You can use a template by setting the `GLM_TEMPLATE` environment variable in the `gridlabd.pre` script.  See https://github.com/slacgismo/gridlabd-template for information on available templates.
+
+## Changing GridLAB-D version
+
+You can change which version of GridLAB-D is used by your project by changing the container the [.github/workflows/gridlabd.yml#15] file. The default container is `slacgismo/gridlabd:latest`.  The development container is `slacgismo/gridlabd:develop`.  You can also select any of the tagged versions listed in among the [SLAC Gismo Dockerhub GridLAB-D images](https://hub.docker.com/repository/docker/slacgismo/gridlabd).
