@@ -19,8 +19,8 @@ jobs:
 
     - name: Simulation
       run: |
-        gridlabd gridlabd.glm --redirect all 
-        tar cfz gridlabd.tar.gz .
+        gridlabd --redirect all gridlabd.glm
+        tar cfz gridlabd.tar.gz --exclude gridlabd.tar.gz .
       
     - name: Save results
       uses: actions/upload-artifact@v2
