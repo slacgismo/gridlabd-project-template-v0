@@ -1,3 +1,5 @@
+[![Run GridLAB-D simulation](https://github.com/dchassin/.gridlabd-project/actions/workflows/gridlabd.yml/badge.svg)](https://github.com/dchassin/.gridlabd-project/actions/workflows/gridlabd.yml)
+
 # GridLAB-D Project Template
 
 This GitHub repository template is designed to make setting up a GridLAB-D project repository on GitHub easy.
@@ -18,7 +20,7 @@ Commit your new model to the `main` branch.
 
 ## Step 4
 
-Click on the `Actions` tab to inspect the result of the latest simulation. 
+Click on the `Actions` tab to inspect the result of the latest simulation.  Don't forget to copy your project's status badge, [edit this README.md file](README.md), and paste it in place of the template badge.
 
 ## Step 5
 
