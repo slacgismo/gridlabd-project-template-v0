@@ -1,0 +1,23 @@
+# slacgismo/gridlabd-project/gridlabd.post
+#
+# This file is the gridlabd postscript run after gridlabd exit successfully.
+#
+
+################################################################################
+# Some common post-processing commands are include the following
+################################################################################
+
+#
+# Plot CSV data
+#
+#gridlabd plot -i=CSVFILE -p=PNGFILE
+
+#
+# Run a python data analysis script
+#
+#python3 PYTHONFILE [ARGS ...]
+
+#
+# Do some file cleanup before the artifacts are stored
+#
+#rm FILENAME
