@@ -40,6 +40,6 @@ fi
 [ -s networkx.py ] || rm networkx.py
 
 # remove empty output files
-find gridlabd.\* -size 1 -type f -exec rm \{\} \;
+find . -size 1 -prune -o -name gridlabd.\* -type f -exec rm \{\} \;
 
 exit $EXITCODE
