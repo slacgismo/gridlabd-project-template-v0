@@ -39,4 +39,7 @@ fi
 # remove temporary fix for tmy32glm converter
 [ -s networkx.py ] || rm networkx.py
 
+# remove empty output files
+find gridlabd.\* -size 1 -type f -exec rm \{\} \;
+
 exit $EXITCODE
