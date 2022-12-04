@@ -17,17 +17,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Simulation
+    - name: Run simulation
       run: |
-        [ -f gridlabd.pre ] && source gridlabd.pre
-        [ ! -z "$GLM_TEMPLATE" ] && gridlabd template get $GLM_TEMPLATE
-        [ ! -z "$GLM_WEATHER" ] && gridlabd weather get $GLM_WEATHER
-        gridlabd --redirect all ${GLM_PRELOAD} gridlabd.glm ${GLM_WEATHER} ${GLM_TIMEZONE:+-D timezone="$GLM_TIMEZONE"} ${GLM_STARTTIME:+-D starttime="$GLM_STARTTIME"} ${GLM_STOPTIME:+-D starttime="$GLM_STOPTIME"} ${GLM_POSTLOAD} ${GLM_TEMPLATE:+-t "$GLM_TEMPLATE"} 
-        [ -f gridlabd.post ] && source gridlabd.post 
-        tar cfz gridlabd.tar.gz --exclude '{gridlabd.tar.gz,LICENSE,README.md}' $(find . -size 1 -print)
+        chmod +x .github/runner.sh
+        bash -c .github/runner.sh
       
-    - name: Save results
+    - name: Save results artifact
       uses: actions/upload-artifact@v2
       with:
         name: gridlabd-results
-        path: gridlabd.tar.gz
+        path: |
+          *
+          !__pycache__
+          !LICENSE
+          !README.md
