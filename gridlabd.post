@@ -1,0 +1,14 @@
+# slacgismo/gridlabd-project/gridlabd.post
+#
+# This file is the gridlabd postscript run after gridlabd exit successfully.
+#
+# Some common commands are included below
+#
+
+# Plot CSV data
+#gridlabd plot -i=CSVFILE -p=PNGFILE
+
+# Run a python script
+#python3 PYTHONFILE [ARGS ...]
+
+

@@ -1,0 +1,48 @@
+# slacgismo/gridlabd-project/gridlabd.pre
+#
+# This file is the gridlabd preamble run before gridlabd is started.
+#
+
+#
+# The following are environment variables you can use to set up your simulation.
+#
+
+# GLM file to load before `gridlabd.glm`
+#GLM_PRELOAD=preload.glm
+
+# Simulation timezone used to create `clock.glm`
+#GLM_TIMEZONE="PST+8PDT"
+
+# Simulation start time used to create `clock.glm`
+#GLM_STARTTIME="2020-01-01 00:00:00 PST"
+
+# Simulation stop time used to create `clock.glm`
+#GLM_STOPTIME="2021-01-01 00:00:00 PST"
+
+# TMY3 weather file to use
+#
+# See https://github.com/slacgismo/gridlabd-weather 
+# for a list of available TMY3 files.
+#GLM_WEATHER="CA-San_Francisco_Intl_Ap.tmy3"
+
+# GLM file to load after `gridlabd.glm`
+#GLM_POSTLOAD=postload.glm
+
+# GLM analysis template to use
+#
+# See https://github.com/slacgismo/gridlabd-template
+# for a list of available analysis templates.
+#GLM_TEMPLATE    template to use
+
+#
+# Some other things that might be done in the preamble include the following
+#
+
+# Convert input files
+#gridlabd convert -i INPUTFILE -o OUTPUTFILE -from TYPE1 -to TYPE2
+
+# Download a standard model
+#gridlabd model get GROUP/NAME
+
+# Download a weather forecast
+#gridlabd noaa_forecast -p=45.62,-122.70 -c=test.csv
