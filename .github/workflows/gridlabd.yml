@@ -28,6 +28,7 @@ jobs:
         name: gridlabd-results
         path: |
           *
+          !.??*
           !__pycache__
           !LICENSE
           !README.md
