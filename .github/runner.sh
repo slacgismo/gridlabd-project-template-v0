@@ -11,7 +11,7 @@
 #   GLM_TEMPLATE    template to use
 #
 
-# temporary fix for missing requirement for module in tmy32glm converter
+# HACK: temporary fix for missing requirement for module in tmy32glm converter
 python3 -m networkx >/dev/null || touch networkx.py
 
 [ -f gridlabd.pre ] && source gridlabd.pre
@@ -36,10 +36,10 @@ else
     cat gridlabd.err >/dev/stderr
 fi
 
-# remove temporary fix for tmy32glm converter
-[ -s networkx.py ] || rm networkx.py
-
 # remove empty output files
-find . -size 1 -prune -o -name gridlabd.\* -type f -exec rm \{\} \;
+find . -size 0 -name gridlabd.\* -type f -exec rm \{\} \;
+
+# HACK: remove temporary fix for tmy32glm converter
+[ -s networkx.py ] || rm networkx.py
 
 exit $EXITCODE
