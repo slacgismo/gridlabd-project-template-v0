@@ -27,6 +27,7 @@ if [ ! -z "$GLM_TIMEZONE" -o ! -z "$GLM_STARTTIME" -o -z "$GLM_STOPTIME" ]; then
     GLM_CLOCK=clock.glm
 fi
 
+echo "Running $(gridlabd --version=all)"
 if gridlabd --redirect all ${GLM_PRELOAD} gridlabd.glm ${GLM_CLOCK} ${GLM_WEATHER} ${GLM_POSTLOAD} ${GLM_TEMPLATE:+-t "$GLM_TEMPLATE"} ; then
     EXITCODE=0
     [ -f gridlabd.post ] && source gridlabd.post 
@@ -34,5 +35,8 @@ else
     EXITCODE=$?
     cat gridlabd.err >/dev/stderr
 fi
+
+# remove temporary fix for tmy32glm converter
+[ -s networkx.py ] || rm networkx.py
 
 exit $EXITCODE
